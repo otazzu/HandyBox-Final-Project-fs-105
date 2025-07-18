@@ -1,4 +1,9 @@
 
+.comment-list {
+  width: 100%;
+  display: block;
+}
+
 .comment-user-img {
   height: 60px;
   width: 60px;
@@ -17,7 +22,6 @@
   }
 }
 
-/* Estrellas de valoración */
 .comment-star {
   font-size: 1.2rem;
   color: #e4e5e9;
