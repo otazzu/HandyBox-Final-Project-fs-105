@@ -24,6 +24,7 @@ bcrypt = "*"
 stripe = "*"
 flask-socketio = "*"
 eventlet = "*"
+tomli = "*"
 
 [requires]
 python_version = "3.13"
