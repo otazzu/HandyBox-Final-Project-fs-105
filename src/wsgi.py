@@ -6,6 +6,6 @@ import os
 
 
 if __name__ == "__main__":
-    #application.run()
+    application.run()
     PORT = int(os.environ.get('PORT', 3001))
     socketio.run(application, host='0.0.0.0', port=PORT, debug=True)
