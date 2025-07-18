@@ -13,7 +13,6 @@ import { Login } from "./pages/Login";
 import { ModifyUser } from "./pages/ModifyUser";
 import { Services } from "./pages/Services";
 import { PaymentPage } from "./pages/PaymentPage";
-// import { Carrito } from "./pages/Carrito";
 import { ResumenCompra } from "./pages/ResumenCompra";
 import { CreateService } from "./pages/CreateService";
 import { ServicesPay } from "./pages/ServicesPay";
@@ -21,8 +20,11 @@ import { ProfessionalServices } from "./pages/ProfessionalServices";
 import { UserDetail } from "./pages/UserDetail";
 import { ServiceDetail  } from "./pages/ServiceDetail";
 import { CreateUserDetail } from "./pages/CreateUserDetail";
+import Chat from "./pages/chat";
 import { ResetPassword } from "./pages/ResetPassword";
 import { ForgotPassword } from "./pages/ForgotPassword";
+import { ModifyService } from "./pages/ModifyService";
+import { SelectServiceToModify } from "./components/SelectServiceToModify";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -49,8 +51,11 @@ export const router = createBrowserRouter(
       <Route path="/professional-services" element={<ProfessionalServices />} />
       <Route path="/service/:id" element={<ServiceDetail />} />
       <Route path="/create-user-detail" element={<CreateUserDetail />} />
+      <Route path="/chat" element={<Chat />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/select-service-to-modify" element={<SelectServiceToModify />} />
+      <Route path="/modifyService/:id" element={<ModifyService />} />
     </Route>
   )
 );
