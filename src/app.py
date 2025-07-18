@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from api.routes.rate import api as rate_api
-from extensions import socketio
+from flask_socketio import SocketIO
 from api.routes.message import api as message_api
 from flask_jwt_extended import JWTManager
 from api.routes.userDetail import api as user_detail_api
@@ -43,7 +43,9 @@ app.register_blueprint(rate_api, url_prefix='/api/rate')
 app.register_blueprint(user_detail_api, url_prefix='/api/user-detail')
 app.register_blueprint(message_api, url_prefix='/api/message')
 
-socketio.init_app(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
+
+
 
 
 app.url_map.strict_slashes = False
@@ -101,7 +103,5 @@ def serve_any_other_file(path):
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
-    import eventlet
-    import eventlet.wsgi
     PORT = int(os.environ.get('PORT', 3001))
     socketio.run(app, host='0.0.0.0', port=PORT, debug=True)
