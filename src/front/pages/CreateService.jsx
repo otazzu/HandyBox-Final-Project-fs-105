@@ -96,7 +96,7 @@ export const CreateService = () => {
                                         </div>
                                         <div className="mb-3">
                                             <label className="form-label">Descripción</label>
-                                            <textarea name="description" value={form.description} onChange={handleChange} className="form-control" maxLength={255} required />
+                                            <textarea name="description" value={form.description} onChange={handleChange} className="form-control" required />
                                         </div>
                                         <div className="mb-3">
                                             <label className="form-label">Precio</label>
