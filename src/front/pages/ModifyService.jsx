@@ -117,7 +117,6 @@ export const ModifyService = () => {
                                     value={form.description}
                                     onChange={handleChange}
                                     className="form-control"
-                                    maxLength={255}
                                     required
                                 />
                             </div>
