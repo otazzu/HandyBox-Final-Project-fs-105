@@ -1,11 +1,15 @@
 # This file was created to run the application on heroku using gunicorn.
 # Read more about it here: https://devcenter.heroku.com/articles/python-gunicorn
 
-from app import app as application, socketio
+from app import app 
 import os
+from extensions import socketio
 
+
+socketio.init_app(app)
 
 if __name__ == "__main__":
-    #application.run()
+    import eventlet
+    import eventlet.wsgi
     PORT = int(os.environ.get('PORT', 3001))
-    socketio.run(application, host='0.0.0.0', port=PORT, debug=True)
+    socketio.run(app, host='0.0.0.0', port=PORT, debug=True)

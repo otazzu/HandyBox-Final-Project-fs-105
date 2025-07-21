@@ -40,7 +40,7 @@ const Message = ({ show, serviceId, professionalId, userId, userName, roomUserId
             },
             reconnection: true,
             reconnectionAttempts: 5,
-            timeout: 2000,
+            timeout: 20000,
         });
         socketRef.current.on("connect", () => {
             console.log("Conexión socket.io exitosa")

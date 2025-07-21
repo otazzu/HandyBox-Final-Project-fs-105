@@ -143,7 +143,7 @@ const Chat = () => {
             auth: { token: sessionStorage.getItem("token") },
             reconnection: true,
             reconnectionAttempts: 5,
-            timeout: 2000,
+            timeout: 20000,
         })
         setSocket(newSocket)
         newSocket.emit("join_room", {
