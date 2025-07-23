@@ -43,7 +43,7 @@ app.register_blueprint(rate_api, url_prefix='/api/rate')
 app.register_blueprint(user_detail_api, url_prefix='/api/user-detail')
 app.register_blueprint(message_api, url_prefix='/api/message')
 
-socketio.init_app(app)
+
 
 
 app.url_map.strict_slashes = False
@@ -101,7 +101,5 @@ def serve_any_other_file(path):
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
-    import eventlet
-    import eventlet.wsgi
     PORT = int(os.environ.get('PORT', 3001))
-    socketio.run(app, host='0.0.0.0', port=PORT, debug=True)
+    app.run(host='0.0.0.0', port=PORT, debug=True)
