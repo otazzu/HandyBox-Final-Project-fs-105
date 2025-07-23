@@ -33,14 +33,17 @@ export const CardService = ({ services, rates }) => {
                         : null;
 
                 return (
-                    <div key={service.id} className="card m-3" style={{ width: "260px" }}>
+                    <div key={service.id} className="card m-3" style={{ width: "350px" }}>
                         <img src={service.img || "https://placeholder.pics/svg/300x200"}
                             className="card-img-top"
                             alt={service.name}
-                            style={{ width: "260px", height: "140px", objectFit: "cover" }} />
+                            style={{ width: "350px", maxHeight: "200px", objectFit: "cover" }} />
 
                         <div className="card-body">
-                            <h5 className="card-title">{service.name}</h5>
+                            <h5
+                                className="card-title"
+                                style={{ height: "38px", overflow: "hidden", textOverflow: "ellipsis", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", fontSize: "1.1rem", marginBottom: "0.5rem" }}>{service.name}
+                            </h5>
 
                             <div className="d-flex justify-content-center align-items-center mb-2">
                                 {serviceRates.length > 0 ? (
