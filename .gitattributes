@@ -1,0 +1,13 @@
+# Forzar a que Jupyter Notebooks se cuenten como Python
+*.ipynb linguist-language=Python
+
+# Asegurar que archivos .py siempre se reconozcan
+*.py linguist-language=Python
+
+# Ignorar archivos grandes que inflan otros lenguajes
+package-lock.json linguist-vendored
+yarn.lock linguist-vendored
+
+# Ignorar documentación/archivos que no deberían influir
+*.md linguist-documentation
+*.txt linguist-documentation
