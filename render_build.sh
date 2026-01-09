@@ -2,11 +2,15 @@
 # exit on error
 set -o errexit
 
-npm install
-npm run build
+# Construir el frontend
+npm install --prefix ./src
+npm run build --prefix ./src
 
+# Instalar pipenv
+pip install pipenv
+
+# Instalar dependencias con pipenv
 pipenv install
 
-pipenv run upgrade
-
-
+# Ejecutar migraciones
+pipenv run python app.py db upgrade
