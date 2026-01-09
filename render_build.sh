@@ -3,8 +3,8 @@
 set -o errexit
 
 # Construir el frontend
-npm install --prefix ./src
-npm run build --prefix ./src
+npm install
+npm run build
 
 # Instalar pipenv
 pip install pipenv
@@ -13,4 +13,4 @@ pip install pipenv
 pipenv install
 
 # Ejecutar migraciones
-pipenv run python app.py db upgrade
+pipenv run python manage.py db upgrade
